@@ -5,3 +5,11 @@ export type Topic = {
   quizIds?: string[];
 };
 
+interface TopicsState {
+  topics: {
+    topics: {
+      [id: string]: Topic;
+    };
+  };
+}
+
