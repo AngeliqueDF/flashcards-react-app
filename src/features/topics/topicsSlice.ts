@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
+import type { RootState } from "../../app/store";
 
 export type Topic = {
   id: string;
@@ -30,5 +31,7 @@ const topicsSlice = createSlice({
     }
   }
 });
+
+export const topicsSelector = (state: RootState) => state.topics.topics;
 
 export default topicsSlice.reducer;
