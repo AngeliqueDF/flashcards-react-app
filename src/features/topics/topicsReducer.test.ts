@@ -8,4 +8,23 @@ describe("topicsReducer", () => {
     ).toEqual({ topics: { topics: {} } });
   });
 
+  test("Should add a topic", () => {
+    const newTopic: Topic = {
+      id: `${uuidv4}`,
+      name: "JavaScript",
+      icon: ""
+    };
+
+    const newState = reducer(undefined, {
+      type: "topics/addTopic",
+      payload: newTopic
+    });
+
+    expect(newState.topics.topics[newTopic.id]).toEqual({
+      id: newTopic.id,
+      name: newTopic.name,
+      icon: newTopic.icon,
+      quizIds: []
+    });
+  });
 });
