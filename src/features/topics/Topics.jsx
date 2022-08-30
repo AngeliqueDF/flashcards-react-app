@@ -1,8 +1,11 @@
+import { useAppSelector } from "./../../app/hooks";
+import { topicsSelector } from "./topicsSlice";
 import NewTopicForm from "../../components/NewTopicForm";
 import { Link } from "react-router-dom";
 import ROUTES from "../../app/routes";
 
 export default function Topics() {
+  const topics = useAppSelector((state) => topicsSelector(state.topics));
 
   return (
     <section className="center">
