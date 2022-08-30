@@ -13,3 +13,5 @@ interface TopicsState {
   };
 }
 
+const initialState: TopicsState = { topics: { topics: {} } };
+
