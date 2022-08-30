@@ -1,7 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
+import topics from "./../features/topics/topicsSlice";
 
 export const store = configureStore({
 	reducer: {
+		topics,
 	},
 });
 
