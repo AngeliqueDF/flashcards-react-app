@@ -24,7 +24,7 @@ const topicsSlice = createSlice({
   initialState,
   reducers: {
     addTopic: (state, action: PayloadAction<Topic>) => {
-      state.topics.topics[action.payload.id] = {
+      state.topics[action.payload.id] = {
         ...action.payload,
         quizIds: []
       };
