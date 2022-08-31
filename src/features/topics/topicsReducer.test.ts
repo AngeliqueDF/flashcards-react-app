@@ -4,8 +4,11 @@ import { v4 as uuidv4 } from "uuid";
 describe("topicsReducer", () => {
   test("Should return initial state by default ", () => {
     expect(
-      reducer(undefined, { type: undefined, payload: undefined })
-    ).toEqual({ topics: { topics: {} } });
+      reducer(undefined, {
+        type: undefined,
+        payload: undefined
+      })
+    ).toEqual({ topics: {} });
   });
 
   test("Should add a topic", () => {
@@ -20,7 +23,7 @@ describe("topicsReducer", () => {
       payload: newTopic
     });
 
-    expect(newState.topics.topics[newTopic.id]).toEqual({
+    expect(newState.topics[newTopic.id]).toEqual({
       id: newTopic.id,
       name: newTopic.name,
       icon: newTopic.icon,

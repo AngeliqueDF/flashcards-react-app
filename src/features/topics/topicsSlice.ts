@@ -9,22 +9,22 @@ export type Topic = {
   quizIds?: string[];
 };
 
-interface TopicsState {
+export interface TopicsState {
   topics: {
-    topics: {
-      [id: string]: Topic;
-    };
+    [id: string]: Topic;
   };
 }
 
-const initialState: TopicsState = { topics: { topics: {} } };
+const initialState: TopicsState = {
+  topics: {}
+};
 
 const topicsSlice = createSlice({
   name: "topics",
   initialState,
   reducers: {
     addTopic: (state, action: PayloadAction<Topic>) => {
-      state.topics.topics[action.payload.id] = {
+      state.topics[action.payload.id] = {
         ...action.payload,
         quizIds: []
       };
