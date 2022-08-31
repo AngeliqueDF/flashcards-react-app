@@ -15,7 +15,9 @@ export interface TopicsState {
   };
 }
 
-const initialState: TopicsState = { topics: { topics: {} } };
+const initialState: TopicsState = {
+  topics: {}
+};
 
 const topicsSlice = createSlice({
   name: "topics",
