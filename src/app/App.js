@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import NewQuizForm from "../components/NewQuizForm";
 import NewTopicForm from "../components/NewTopicForm";
-import Topics from "../features/topics/Topics";
+import Topics from "../features/topics/Topics/Topics";
 import Topic from "../features/topics/Topic";
 import Quiz from "../features/quizzes/Quiz";
 import Quizzes from "../features/quizzes/Quizzes";
