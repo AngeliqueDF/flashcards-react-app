@@ -9,11 +9,9 @@ export type Topic = {
   quizIds?: string[];
 };
 
-interface TopicsState {
+export interface TopicsState {
   topics: {
-    topics: {
-      [id: string]: Topic;
-    };
+    [id: string]: Topic;
   };
 }
 
