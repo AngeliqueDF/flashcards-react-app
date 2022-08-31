@@ -23,7 +23,7 @@ describe("topicsReducer", () => {
       payload: newTopic
     });
 
-    expect(newState.topics.topics[newTopic.id]).toEqual({
+    expect(newState.topics[newTopic.id]).toEqual({
       id: newTopic.id,
       name: newTopic.name,
       icon: newTopic.icon,
