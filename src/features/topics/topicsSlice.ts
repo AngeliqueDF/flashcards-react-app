@@ -28,6 +28,13 @@ const topicsSlice = createSlice({
         ...action.payload,
         quizIds: []
       };
+    },
+    addAssociatedQuizz: (
+      state,
+      action: PayloadAction<{ quizId: string; topicId: string }>
+    ) => {
+      const topic = state.topics[action.payload.topicId];
+      topic.quizIds = [action.payload.quizId];
     }
   }
 });
