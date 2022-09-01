@@ -11,4 +11,23 @@ describe("topicsReducer", () => {
     ).toEqual({ quizzes: {} });
   });
 
+  test("Should add a quizz", () => {
+    const newQuizz: Quizz = {
+      id: uuidv4(),
+      name: "JavaScript",
+      topicId: uuidv4()
+    };
+
+    const newState = reducer(undefined, {
+      type: "quizzes/addQuiz",
+      payload: newQuizz
+    });
+
+    expect(newState.quizzes[newQuizz.id]).toEqual({
+      id: newQuizz.id,
+      name: newQuizz.name,
+      topicId: newQuizz.topicId,
+      cardIds: []
+    });
+  });
 });
