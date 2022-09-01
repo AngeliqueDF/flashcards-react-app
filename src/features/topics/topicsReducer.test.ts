@@ -1,4 +1,4 @@
-import reducer, { Topic } from "./topicsSlice";
+import reducer, { Topic, TopicsState } from "./topicsSlice";
 import { v4 as uuidv4 } from "uuid";
 
 describe("topicsReducer", () => {
@@ -29,5 +29,32 @@ describe("topicsReducer", () => {
       icon: newTopic.icon,
       quizIds: []
     });
+  });
+
+  test("Should add a quizz id to the topic it is associated with", () => {
+    const currentTopic: Topic = {
+      id: uuidv4(),
+      name: "JavaScript",
+      icon: ""
+    };
+
+    const associatedQuizzId: string = uuidv4();
+
+    const currentState: TopicsState = {
+      topics: {
+        [currentTopic.id]: currentTopic
+      }
+    };
+
+    const newState = reducer(currentState, {
+      type: "topics/addAssociatedQuizz",
+      payload: { quizId: associatedQuizzId, topicId: currentTopic.id }
+    });
+
+    const foundQuizzId = newState.topics[currentTopic.id].quizIds?.find(
+      (quizId) => quizId === associatedQuizzId
+    );
+
+    expect(foundQuizzId).toBe(associatedQuizzId);
   });
 });
