@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import topics from "./../features/topics/topicsSlice";
+import quizzes from "./../features/quizzes/quizzesSlice";
 
 export const store = configureStore({
 	reducer: {
 		topics,
+		quizzes,
 	},
 });
 
