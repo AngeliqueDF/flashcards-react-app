@@ -9,11 +9,11 @@ export type Topic = {
   quizIds?: string[];
 };
 
-export interface TopicsState {
+export type TopicsState = {
   topics: {
     [id: string]: Topic;
   };
-}
+};
 
 const initialState: TopicsState = {
   topics: {}

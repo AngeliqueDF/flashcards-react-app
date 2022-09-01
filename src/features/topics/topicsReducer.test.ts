@@ -13,7 +13,7 @@ describe("topicsReducer", () => {
 
   test("Should add a topic", () => {
     const newTopic: Topic = {
-      id: `${uuidv4}`,
+      id: uuidv4(),
       name: "JavaScript",
       icon: ""
     };
