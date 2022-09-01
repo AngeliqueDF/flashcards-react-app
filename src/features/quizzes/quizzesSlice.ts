@@ -20,6 +20,16 @@ const initialState: QuizzesState = { quizzes: {} };
 const quizzesSlice = createSlice({
   name: "quizzes",
   initialState,
+  reducers: {
+    addQuiz: (state, action: PayloadAction<Quizz>) => {
+      state.quizzes[action.payload.id] = {
+        ...action.payload,
+        cardIds: []
+      };
+    }
+  }
 });
+
+export const { addQuiz } = quizzesSlice.actions;
 
 export default quizzesSlice.reducer;
